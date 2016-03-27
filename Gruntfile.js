@@ -59,7 +59,17 @@ module.exports = function (grunt) {
           options: {
             port: 9000
           }
-        }
+        },
+
+        watch: {
+          scripts: {
+            files: ['**/*.js'],
+            tasks: ['concat'],
+            options: {
+              spawn: false,
+            },
+          },
+        },
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.
@@ -70,6 +80,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-serve');
+    grunt.loadNpmTasks('grunt-contrib-watch');
   
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     //grunt.registerTask('default', ['concat:igvexp', 'uglify:igvexp']);
