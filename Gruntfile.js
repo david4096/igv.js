@@ -53,6 +53,12 @@ module.exports = function (grunt) {
                     }]
 
             }
+        },
+
+        serve: {
+          options: {
+            port: 9000
+          }
         }
     });
 
@@ -63,7 +69,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-md2html');
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-connect');
-
+    grunt.loadNpmTasks('grunt-serve');
+  
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     //grunt.registerTask('default', ['concat:igvexp', 'uglify:igvexp']);
     //grunt.registerTask('default', ['concat:igv', 'uglify:igv', 'md2html:igv']);
